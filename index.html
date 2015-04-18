@@ -1,0 +1,206 @@
+<DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/
+    bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="styles/reset.css"> -->
+    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+    <title>More Functions</title>
+  </head>
+ 
+  <body>
+    <h2>More Functions</h2>
+  <!--function 1-->
+    <div id="function-1">
+      <h2 class="problem">Problem #1</h2>
+      <div class="description">
+        Write a function that takes a string and checks to make sure that the string has a length of exactly three. Return true if the string length is three or false if it is not three. If the input is invalid throw an 'Invalid Input' exception.
+      </div>
+      <input type="text" id='input' placeholder ="Write a string with a length of 3">
+      <button id="btn">Run</button>
+      <div class="answer1"></div>
+    </div>
+
+<!-- function 2 -->
+    <div id="function-2">
+      <h2 class="problem">Problem #2</h2>
+      <div class="description">
+         Write a function that, given two arrays of integers a and b, returns an array that is formed by the elements of a followed by the elements of b. If the input is invalid throw an'Invalid Input' exception.
+      </div>
+      Array a
+      [<input type="text" id='input' placeholder ="Item 1, Item2, Item3, etc...">] <br>
+      Array b
+      [<input type="text" id='input' placeholder ="Item 1, Item2, Item3, etc...">]
+      <button id="btn">Run</button>
+      <div class="answer2"></div>
+    </div>
+
+<!-- function 3 -->
+    <div id="function-3">
+      <h2 class="problem">Problem #3</h2>
+      <div class="description">
+        Proper nouns always begin with a capital letter, followed by small letters. Write a function called `fixProperNoun` that takes a potentially improperly capitalized proper noun and returns the same noun with the proper capitalization. If the input is invalid throw an 'Invalid Input' exception.
+      </div>
+      <input type="text" id='input' placeholder ="Proper noun here">
+      <button id="btn">Run</button>
+      <div class="answer3"></div>
+    </div>
+<!-- function 4 -->
+    <div id="function-4">
+      <h2 class="problem">Problem #4</h2>
+      <div class="description">
+        Write a function called `sortLetters` that returns a string that sorts all the letters from a given string in the alphabetical order. If the input is invalid throw an 'Invalid Input' exception.
+      </div>
+
+      <input type="text" id='input' placeholder ="Enter a string of letters">
+      <button id="btn">Run</button>
+      <div class="answer4"></div>
+    </div>
+
+<!-- function 5 -->
+    <div id="function-5">
+      <h2 class="problem">Problem #5</h2>
+      <div class="description">
+       Write a function called `absVal` that return the absolute value of a given integer. Don't use Math.abs(...) <br>If the input is invalid throw an 'Invalid Input' exception.
+      </div>
+      <input type="number" id='input' placeholder ="Enter Number"> 
+      <button id="btn">Run</button>
+      <div class="answer5"></div>
+    </div>
+
+<!-- function 6 -->
+    <div id="function-6">
+      <h2 class="problem">Problem #6</h2>
+      <div class="description">
+        Write a function called `myMin` that takes two integers and returns the smaller of the two numbers. If the input is invalid throw an 'Invalid Input' exception.
+      </div>
+      <input type="number" id='input' placeholder ="Enter a number">
+      <input type="number" id='input' placeholder ="Enter a number">
+      <br>
+      <button id="btn">Run</button><br>
+      <div class="answer6"></div>
+    </div>
+
+<!-- function 7 -->
+    <div id="function-7">
+      <h2 class="problem">Problem #7</h2>
+      <div class="description">
+        Write a function called `getMonth` that maps a given integer to a month.<br>
+        For example:<br>
+          getMonth(1) == 'January'<br>
+          getMonth(3) == 'March'<br>
+          etc.<br><br>
+        If the input is invalid throw an 'Invalid Input' exception.
+      </div>
+
+      <input type="number" id='input' placeholder ="1, 2, 3...up to 12">
+      <button id="btn">Run</button>
+      <div class="answer7"></div>
+    </div>
+
+<!-- function 8 -->
+    <div id="function-8">
+      <h2 class="problem">Problem #8</h2>
+      <div class="description">
+        Write a function called `sumSquares` that returns the sum of squares of all integers from 1 up to and including a given positive, non-zero integer N. 
+        <br><br>
+        If the input is invalid throw an 'Invalid Input' exception
+      </div>
+
+      <input type="number" id='input' placeholder ="Positive integer">
+      <button id="btn">Run</button>
+      <div class="answer8"></div>
+    </div>
+
+<!-- function 9 -->
+    <div id="function-9">
+      <h2 class="problem">Problem #9</h2>
+      <div class="description">
+        Given an array of integers, write a function called `findMaxDiff` that finds the maximal difference between any two adjacent elements. 
+        <br><br>
+        If the input is invalid throw an 'Invalid Input' exception.
+      </div>
+
+      [ <input type="text" id='input' placeholder ="Num1, Num2, Num3, etc..."> ]
+      <button id="btn">Run</button>
+      <div class="answer9"></div>
+    </div>
+
+<!-- function 10 -->
+    <div id="function-10">
+      <h2 class="problem">Problem #10</h2>
+      <div class="description">
+        Write a function called `insertDashes` that transforms a given sentence into a new one with dashes between each two consecutive letters. 
+       <br><br>
+        For example: <br>insertDashes('abba test') => a-b-b-a t-e-s-t
+        <br><br>
+        If the input is invalid throw an 'Invalid Input' exception.
+      </div>
+
+      <input type="text" id='input' placeholder ="Write short sentence">
+      <button id="btn">Run</button>
+      <div class="answer10"></div>
+    </div>
+
+<!-- function 11 -->
+    <div id="function-11">
+      <h2 class="problem">Problem #11</h2>
+      <div class="description">
+        Implement a function called `mySubstring` that can output the substring of the given string within specified bounds.
+        <br><br>
+        For example: mySubstring('abcde', 2, 3) === 'cd'
+        (Don't use String.substring in your solution.)
+        <br><br>
+        If the input is invalid throw an 'Invalid Input' exception.
+      </div>
+
+      <input type="text" id='input' placeholder ="Enter a string">
+      <input type="number" id='input' placeholder ="Num1">
+      <input type="text" id='input' placeholder ="Num2">
+      <button id="btn">Run</button>
+      <div class="answer11"></div>
+    </div>
+
+<!-- function 12 -->
+    <div id="function-12">
+      <h2 class="problem">Problem #12</h2>
+      <div class="description">
+        Write a function called `splitSwap` that swaps two halves of a given array. If the array has an odd number of elements the array should be split in half by rounding down the number of elements divided by two.
+        <br><br>
+        For example: splitSwap([1,2,3,4,5]) === [3,4,5,1,2]
+        <br><br>
+        If the input is invalid throw an 'Invalid Input' exception.
+      </div>
+
+      [<input type="text" id='input' placeholder ="Item 1, Item2, Item3, etc...">]
+      <button id="btn">Run</button>
+      <div class="answer12"></div>
+    </div>
+
+<!-- function 13 -->
+    <div id="function-13">
+      <h2 class="problem">Problem #13</h2>
+      <div class="description">
+        For given n and k write a function called `smallMultiples` that returns the count of the number of multiples of k that are not greater than n.
+        <br><br>
+        For example smallMultiples(4, 1) === 3 because 1*2, 1*3 and 1*4 are not greater than 4.
+        <br><br>
+        If the input is invalid throw an 'Invalid Input' exception.
+      </div>
+      Input a number: "n"
+      <input type="number" id='input' placeholder ="Num-n">
+      Input a number: "k"
+      <input type="number" id='input' placeholder ="Num-k">
+      <button id="btn">Run</button>
+      <div class="answer13"></div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="functions.js"></script>
+  </body>
+</html>
