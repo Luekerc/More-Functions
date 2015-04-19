@@ -8,25 +8,10 @@ function onReady() {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
-function checkData(inputString){
-	if(typeof inputString!=='string'|| inputString===""){
-		$(".error").html('Invalid Input');
-	}
-	else if(inputString.length>3 || inputString.length<3 ){
-		$(".error").html('false');
-		$(".answer").html('');
-		
-	}
-	else {
-		$(".error").html('');
-		$(".answer").html('true');
-	};
-};
-$(".first-btn").click(function(){
-	var inputString="";
-	inputString = $("#input1").val();
-	$('.answer').val(checkData(inputString));
-});
+function checkData(inputString) {
+	for()
+	// your code goes here
+}
 
 /*
  * PROBLEM 2: (easy)
