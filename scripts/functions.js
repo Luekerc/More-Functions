@@ -8,10 +8,25 @@ function onReady() {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
-function checkData(inputString) {
-	for()
-	// your code goes here
-}
+function checkData(inputString){
+	if(typeof inputString!=='string'|| inputString===""){
+		$(".error").html('Invalid Input');
+	}
+	else if(inputString.length>3 || inputString.length<3 ){
+		$(".error").html('false');
+		$(".answer").html('');
+		
+	}
+	else {
+		$(".error").html('');
+		$(".answer").html('true');
+	};
+};
+$(".first-btn").click(function(){
+	var inputString="";
+	inputString = $("#input1").val();
+	$('.answer').val(checkData(inputString));
+});
 
 /*
  * PROBLEM 2: (easy)
@@ -21,9 +36,27 @@ function checkData(inputString) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function concatenateArrays(a, b) {
-	// your code goes here
-}
-
+	var finalArray=a.concat(b);
+	//this console.logs the concatenated arrays
+	console.log(finalArray);
+	//this turns finalArray into a product that can print the 
+	//commas onto the html.  Otherwise, the inner two
+	// items will be right next to each other
+	bestArray = "[" + finalArray.join(",") + "]";
+	return bestArray;
+};
+$(".second-btn").click(function(){
+	var a = $("#array-a").val();
+	//the .split() takes out the written commas and
+	// turns the input string into an array and
+	//puts honest to goodness array commas in between items
+	a = a.split(",");
+	var b = $("#array-b").val();
+	b = b.split(",");
+	console.log(b);
+	//this displays an html version of the array
+	$('#answer2').html(concatenateArrays(a, b));
+});
 /*
  * PROBLEM 3: (easy)
  * Proper nouns always begin with a capital letter, followed by small letters.
