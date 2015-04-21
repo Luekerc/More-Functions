@@ -36,14 +36,21 @@ $(".first-btn").click(function(){
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function concatenateArrays(a, b) {
-	var finalArray=a.concat(b);
-	//this console.logs the concatenated arrays
-	console.log(finalArray);
-	//this turns finalArray into a product that can print the 
-	//commas onto the html.  Otherwise, the inner two
-	// items will be right next to each other
-	bestArray = "[" + finalArray.join(",") + "]";
-	return bestArray;
+	if( a.toString()===""||b.toString()===""){
+		$('.error2').html("Invalid Input");
+		$('#answer2').html("");
+	}
+	else{
+		$('.error2').html("");
+		var finalArray=a.concat(b);
+		//this console.logs the concatenated arrays
+		console.log(finalArray);
+		//this turns finalArray into a product that can print the 
+		//commas onto the html.  Otherwise, the inner two
+		// items will be right next to each other
+		bestArray = "[" + finalArray.join(",") + "]";
+		return bestArray;
+	};
 };
 $(".second-btn").click(function(){
 	var a = $("#array-a").val();
@@ -68,7 +75,30 @@ $(".second-btn").click(function(){
  */
 function fixProperNoun(noun) {
 	// your code goes here
+	console.log(noun);
+	if (noun===""||!isNaN(noun)){
+		$(".error3").html("Invalid Input");
+		$('.answer3').html('');
+	}
+	else{
+		$(".error3").html('');
+		var Noun = noun.toLowerCase();
+		console.log(Noun);
+		var firstLetter=(Noun.charAt(0));
+		console.log(firstLetter);
+		var upperCase = firstLetter.toUpperCase();
+		var tailNoun = Noun.substr(1);
+		console.log(tailNoun);
+		var proNoun = upperCase + tailNoun;
+		console.log(proNoun);
+		return proNoun;
+	}
 }
+$(".third-btn").click(function(){
+	var noun = $("#input3").val();
+	//this displays in html 
+	$('.answer3').html(fixProperNoun(noun));
+});
 
 /*
  * PROBLEM 4: (easy)
