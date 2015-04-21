@@ -160,6 +160,23 @@ $(".fifth-btn").click(function(){
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+ function myMin(a, b) {
+	if( a===""||b===""||isNaN(a)||isNaN(b)){
+		$('.error6').html("Invalid Input");
+		$('.answer6').html("");
+	}else if(a>b){
+		$('.error6').html("");
+		return b;
+	}else{
+		$('.error6').html("");
+		return a;
+	}
+};
+$(".sixth-btn").click(function(){
+	var a = $(".input6a").val();
+	var b = $(".input6b").val();
+	$('.answer6').html(myMin(a, b));
+});
 
 /*
  * PROBLEM 7: (easy)
@@ -172,6 +189,52 @@ $(".fifth-btn").click(function(){
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+ function getMonth(number){
+  	switch(number){
+  		case "1": 
+  			return "January";
+  		break;
+  		case "2": 
+  			return "February";
+  		break;
+  		case "3": 
+  			return "March";
+  		break;
+  		case "4": 
+  			return "April";
+  		break;
+  		case "5": 
+  			return "May";
+  		break;
+  		case "6": 
+  			return "June";
+  		break;
+  		case "7": 
+  			return "July";
+  		break;
+  		case "8": 
+  			return "August";
+  		break;
+  		case "9": 
+  			return "September";
+  		break;
+  		case "10": 
+  			return "October";
+  		break;
+  		case "11": 
+  			return "November";
+  		break;
+  		case "12": 
+  			return "December";
+  		break;
+  		default: 
+  			return "Invalid Input";
+  	}
+};
+$(".btn-svn").click(function(){
+	var number = $(".input7").val();
+	$('.answer7').html(getMonth(number));
+});
 
 /*
  * PROBLEM 8: (medium)
@@ -180,6 +243,30 @@ $(".fifth-btn").click(function(){
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+ function sumSquares(N){
+ 	if( N===""||isNaN(N)||N<=0){
+		$('.error8').html("Invalid Input");
+		$('.answer8').html("");
+	}else if(N>99){
+		$('.error8').html("Slow down John Wayne, lets choose a number smaller than 100."+"<br>"+"I don't like to multiply THAT much!");
+		$('.answer8').html("");
+	}
+	else {
+		$('.error8').html("");
+//msdn.microsoft.com/en-us/library/ie/wwbyhkx4%28v=vs.94%29.aspx	
+		var factorialN = N;
+		//loop starting at N and 
+		//increments by -1 until it reaches 3 
+		while(N-- >2){
+			factorialN*=N;
+		}
+		return factorialN;
+		}
+};
+ $(".btn-eight").click(function(){
+	var N = $(".input8").val();
+	$('.answer8').html(sumSquares(N));
+});
 
 /* 
  * PROBLEM 9: (medium)
@@ -189,6 +276,25 @@ $(".fifth-btn").click(function(){
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 
+function findMaxDiff(array) {
+	if( a.toString()===""){
+		$('.error9').html("Invalid Input");
+		$('.answer9').html("");
+	}
+	else{
+		$('.error9').html("");
+	
+	
+	};
+};
+$(".ninth-btn").click(function(){
+	var a = $(".input9").val();
+	//the .split() takes out the written commas and
+	// turns the input string into an array and
+	//puts honest to goodness array commas in between items
+	a = a.split(",");
+	$('.answer9').html(findMaxDiff(array));
+});
 /*
  * PROBLEM 10: (medium)
  * Write a function called `insertDashes` that transforms a given sentence into
