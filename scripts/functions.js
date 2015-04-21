@@ -97,20 +97,36 @@ function fixProperNoun(noun) {
 $(".third-btn").click(function(){
 	var noun = $("#input3").val();
 	//this displays in html 
-	$('.answer3').html(fixProperNoun(noun));
+	$('#input3').val(fixProperNoun(noun));
 });
 
 /*
  * PROBLEM 4: (easy)
- * Write a function called `sortLetters` that returns a string that sorts all 
- * the letters from a given string in the alphabetical order.
+ * Write a function called `sortLetters` that 
+ * returns a string that sorts all the letters 
+ * from a given string in the alphabetical order.
  *
- * If the input is invalid throw an 'Invalid Input' exception.
+ * If the input is invalid throw an 'Invalid Input'
+ * exception.
  */
 function sortLetters(inputString) {
-	// your code goes here
-}
-
+	if(inputString===''||!isNaN(inputString)){
+		$(".error4").html("Invalid Input");
+		$('.answer4').html('');
+		}
+		else{
+			$('.error4').html('');
+			
+	//Source = http://stackoverflow.com/questions/5285995/how-do-you-sort-letters-in-javascript-with-capital-and-lowercase-letters-combin
+			var orderedString =(inputString.toLowerCase().split('').sort().join(''));
+		}
+		return orderedString;
+};
+$(".fourth-btn").click(function(){
+	var inputString = $(".input4").val();
+	//this displays in html 
+	$('.input4').val(sortLetters(inputString));
+});
 /*
  * PROBLEM 5: (easy)
  * Write a function called `absVal` that return the absolute value of a given 
