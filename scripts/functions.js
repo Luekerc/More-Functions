@@ -74,29 +74,29 @@ $(".second-btn").click(function(){
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function fixProperNoun(noun) {
-	// your code goes here
-	console.log(noun);
+	//checks for an input and whether its a number
 	if (noun===""||!isNaN(noun)){
 		$(".error3").html("Invalid Input");
 		$('.answer3').html('');
 	}
 	else{
 		$(".error3").html('');
+		//changes everything to lower case
 		var Noun = noun.toLowerCase();
-		console.log(Noun);
+		//grabs the first character
 		var firstLetter=(Noun.charAt(0));
-		console.log(firstLetter);
+		//capitalizes the first character
 		var upperCase = firstLetter.toUpperCase();
-		var tailNoun = Noun.substr(1);
-		console.log(tailNoun);
+		//grabs the rest of the noun and ensures its lowercase
+		var tailNoun = Noun.toLowerCase().substr(1);
+		//concantenates the two back together
 		var proNoun = upperCase + tailNoun;
-		console.log(proNoun);
+		//makes the final product available
 		return proNoun;
-	}
-}
+	};
+};
 $(".third-btn").click(function(){
 	var noun = $("#input3").val();
-	//this displays in html 
 	$('#input3').val(fixProperNoun(noun));
 });
 
@@ -118,7 +118,7 @@ function sortLetters(inputString) {
 			$('.error4').html('');
 			
 	//Source = http://stackoverflow.com/questions/5285995/how-do-you-sort-letters-in-javascript-with-capital-and-lowercase-letters-combin
-			var orderedString =(inputString.toLowerCase().split('').sort().join(''));
+			var orderedString =(inputString.split('').sort().join(''));
 		}
 		return orderedString;
 };
@@ -135,9 +135,24 @@ $(".fourth-btn").click(function(){
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function absVal(integer) {
-	// your code goes here
-}
-
+	console.log(typeof(integer));
+	if (integer===""||isNaN(integer)){
+		$(".error5").html("Invalid Input");
+		$('.answer5').html('');
+	}else{
+		$(".error5").html("");
+//stackoverflow.com/questions/9353929/get-the-absolute-value-of-a-number-in-javascript
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt
+		integer = integer*integer;
+		integer = Math.sqrt(integer);
+		return integer;
+	}
+};
+$(".fifth-btn").click(function(){
+	var integer = $(".input5").val();
+	//this displays in html 
+	$('.answer5').html(absVal(integer));
+});
 /*
  * PROBLEM 6: (easy)
  * Write a function called `myMin` that takes two integers and returns the
