@@ -329,6 +329,28 @@ $(".ninth-btn").click(function(){
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+function insertDashes(string){
+	if (string===""){
+		$(".error10").html("Invalid Input");
+	}else{
+		$(".error10").html("");
+		string=string.split('').join('-');
+	//this next part uses regex and .replace()
+	//to replace any instance of "- -"" within string
+	//source: developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+	//otherwise, without the regex /- -/gi, .replace() only replaced
+	//the first instance of "- -"
+		var re = /- -/g;
+		string=string.replace(re,' ');
+		console.log(string);
+		return string;
+	}
+};
+
+ $(".tenth-btn").click(function(){
+	var string = $(".input10").val();
+	$('.input10').val(insertDashes(string));
+});
 
 /* 
  * PROBLEM 11: (medium)
