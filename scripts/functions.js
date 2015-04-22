@@ -424,9 +424,12 @@ $(".btn-twelve").click(function(){
  * If the input is invalid throw an 'Invalid Input' exception.
  */
  function smallMultiples(n, k){
- 	if(n===""||k===""){
+ 	if(n===""||k===""||n>=k||isNaN(n)||isNaN(k)){
  		$(".error13").html("Invalid Input");
 		$('.answer13').html("");
+ 	}else{
+ 		$(".error13").html("");
+ 		
  	}
 };
 
