@@ -277,22 +277,48 @@ $(".btn-svn").click(function(){
  */
 
 function findMaxDiff(array) {
-	if( a.toString()===""){
-		$('.error9').html("Invalid Input");
-		$('.answer9').html("");
+	var Jimmy=[];
+	var Ymmij=[];
+	for (var i=0;i<array.length; i++){
+		if(array.toString()===""||isNaN(array[i])){
+			$('.error9').html("Invalid Input");
+			$('.answer9').html("");
+		}
+		else {
+			$('.error9').html("");				
+			for(var i=1; i<array.length;i++){
+				//Jimmy and Ymmij are arrays of the differences
+				//between adjacent elements, one subtracts 
+				//left to right and one subtracts right to left
+				Jimmy.push(array[i]-array[i-1]);
+				Ymmij.push(array[i-1]-array[i]);
+				//both Jimmy & Ymmij console all iterations of their arrays
+				//as they build up to the full length arrays, but only
+				//the single element array(first iteration) can be accessed
+				//of each, so we need be able to grab the full length arrays.
+				//Hence, we create "var Bill" to compare them to.			
+				var Bill=array.length-1;
+				if(Jimmy.length==Bill&&Ymmij.length==Bill){
+					//find the max value of the differences
+					Jimmy=Math.max.apply(null,Jimmy);
+					Ymmij=Math.max.apply(null,Ymmij);
+					//compare each max value
+					if (Jimmy>Ymmij){
+						return Jimmy;
+					}else{
+						return Ymmij;
+					}
+				}
+			}
+		}
 	}
-	else{
-		$('.error9').html("");
-	
-	
-	};
 };
 $(".ninth-btn").click(function(){
 	var a = $(".input9").val();
 	//the .split() takes out the written commas and
 	// turns the input string into an array and
 	//puts honest to goodness array commas in between items
-	a = a.split(",");
+	array = a.split(",");
 	$('.answer9').html(findMaxDiff(array));
 });
 /*
