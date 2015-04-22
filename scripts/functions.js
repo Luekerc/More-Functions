@@ -275,7 +275,6 @@ $(".btn-svn").click(function(){
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
-
 function findMaxDiff(array) {
 	var Jimmy=[];
 	var Ymmij=[];
@@ -335,10 +334,10 @@ function insertDashes(string){
 	}else{
 		$(".error10").html("");
 		string=string.split('').join('-');
-	//this next part uses regex and .replace()
+	//this next part uses regex and .replace() function
 	//to replace any instance of "- -"" within string
 	//source: developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
-	//otherwise, without the regex /- -/gi, .replace() only replaced
+	//otherwise, without the regex /g (meaning global), .replace() only replaced
 	//the first instance of "- -"
 		var re = /- -/g;
 		string=string.replace(re,' ');
@@ -363,7 +362,28 @@ function insertDashes(string){
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
-
+function mySubstring(string, a, b){
+	if(string===""||a===""||b===""||isNaN(a)||
+		isNaN(b)||a>b||a<=0||b>string.length){
+		$(".error11").html("Invalid Input");
+		$('.answer11').html("");
+	}
+	else {
+			$(".error11").html("");
+		//while b is a number, its still a string type so
+		//b+1=b1 not b+1, so we have to change b to a number
+		//which changes + to addition rather than concantenation
+			b=parseInt(b)+1;
+			string=string.slice(a, b);
+			return string;
+		}
+};
+$(".btn-eleven").click(function(){
+	var string = $(".input11").val();
+	var a = $(".input11a").val();
+	var b = $(".input11b").val();
+	$('.answer11').html(mySubstring(string, a, b));
+});
 /*
  * PROBLEM 12: (medium)
  * Write a function called `splitSwap` that swaps two halves of a given array.
@@ -374,6 +394,24 @@ function insertDashes(string){
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+function splitSwap(array){
+	if(array===""){
+		$(".error12").html("Invalid Input");
+		$('.answer12').html("");
+	}
+	else {
+			$(".error12").html("");
+			array=array.split(",");
+			var rightArray = array.splice(0, Math.floor(array.length/2));
+			array=array.concat(rightArray);
+			array = "[" + array.join(",") + "]";
+			return array;
+		}
+};
+$(".btn-twelve").click(function(){
+	var array = $(".input12").val();
+	$('.answer12').html(splitSwap(array));
+});
 
 /*
  * PROBLEM 13: (medium)
@@ -385,6 +423,18 @@ function insertDashes(string){
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+ function smallMultiples(n, k){
+ 	if(n===""||k===""){
+ 		$(".error13").html("Invalid Input");
+		$('.answer13').html("");
+ 	}
+};
+
+$(".btn-13").click(function(){
+	var n = $(".input13a").val();
+	var k = $(".input13b").val();
+	$('.answer13').html(smallMultiples(n,k));
+});
 
 }
 
