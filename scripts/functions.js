@@ -1,5 +1,6 @@
 $(document).ready(onReady);
 function onReady() {
+"use strict";
 /*
  * PROBLEM 1: (easy)
  * Write a function that takes a string and checks to make sure that the string
@@ -14,20 +15,18 @@ function checkData(inputString){
 	}
 	else if(inputString.length>3 || inputString.length<3 ){
 		$(".error").html('false');
-		$(".answer").html('');
-		
+		$(".answer").html('');	
 	}
 	else {
 		$(".error").html('');
 		$(".answer").html('true');
-	};
-};
+	}
+}
 $(".first-btn").click(function(){
 	var inputString="";
 	inputString = $("#input1").val();
 	$('.answer').val(checkData(inputString));
 });
-
 /*
  * PROBLEM 2: (easy)
  * Write a function that, given two arrays of integers a and b, returns an array
@@ -48,10 +47,10 @@ function concatenateArrays(a, b) {
 		//this turns finalArray into a product that can print the 
 		//commas onto the html.  Otherwise, the inner two
 		// items will be right next to each other
-		bestArray = "[" + finalArray.join(",") + "]";
+		var bestArray = "[" + finalArray.join(",") + "]";
 		return bestArray;
-	};
-};
+	}
+}
 $(".second-btn").click(function(){
 	var a = $("#array-a").val();
 	//the .split() takes out the written commas and
@@ -93,13 +92,12 @@ function fixProperNoun(noun) {
 		var proNoun = upperCase + tailNoun;
 		//makes the final product available
 		return proNoun;
-	};
-};
+	}
+}
 $(".third-btn").click(function(){
 	var noun = $("#input3").val();
 	$('#input3').val(fixProperNoun(noun));
 });
-
 /*
  * PROBLEM 4: (easy)
  * Write a function called `sortLetters` that 
@@ -119,9 +117,9 @@ function sortLetters(inputString) {
 			
 	//Source = http://stackoverflow.com/questions/5285995/how-do-you-sort-letters-in-javascript-with-capital-and-lowercase-letters-combin
 			var orderedString =(inputString.split('').sort().join(''));
+			return orderedString;
 		}
-		return orderedString;
-};
+}
 $(".fourth-btn").click(function(){
 	var inputString = $(".input4").val();
 	//this displays in html 
@@ -147,7 +145,7 @@ function absVal(integer) {
 		integer = Math.sqrt(integer);
 		return integer;
 	}
-};
+}
 $(".fifth-btn").click(function(){
 	var integer = $(".input5").val();
 	//this displays in html 
@@ -171,7 +169,7 @@ $(".fifth-btn").click(function(){
 		$('.error6').html("");
 		return a;
 	}
-};
+}
 $(".sixth-btn").click(function(){
 	var a = $(".input6a").val();
 	var b = $(".input6b").val();
@@ -193,49 +191,36 @@ $(".sixth-btn").click(function(){
   	switch(number){
   		case "1": 
   			return "January";
-  		break;
   		case "2": 
   			return "February";
-  		break;
   		case "3": 
   			return "March";
-  		break;
   		case "4": 
   			return "April";
-  		break;
   		case "5": 
   			return "May";
-  		break;
   		case "6": 
   			return "June";
-  		break;
   		case "7": 
   			return "July";
-  		break;
   		case "8": 
   			return "August";
-  		break;
   		case "9": 
   			return "September";
-  		break;
   		case "10": 
   			return "October";
-  		break;
   		case "11": 
   			return "November";
-  		break;
   		case "12": 
   			return "December";
-  		break;
   		default: 
   			return "Invalid Input";
   	}
-};
+}
 $(".btn-svn").click(function(){
 	var number = $(".input7").val();
 	$('.answer7').html(getMonth(number));
 });
-
 /*
  * PROBLEM 8: (medium)
  * Write a function called `sumSquares` that returns the sum of squares of all
@@ -244,6 +229,8 @@ $(".btn-svn").click(function(){
  * If the input is invalid throw an 'Invalid Input' exception.
  */
  function sumSquares(N){
+ 	var array=[];
+ 	var myTotal = 0;
  	if( N===""||isNaN(N)||N<=0){
 		$('.error8').html("Invalid Input");
 		$('.answer8').html("");
@@ -253,16 +240,31 @@ $(".btn-svn").click(function(){
 	}
 	else {
 		$('.error8').html("");
-//msdn.microsoft.com/en-us/library/ie/wwbyhkx4%28v=vs.94%29.aspx	
-		var factorialN = N;
-		//loop starting at N and 
-		//increments by -1 until it reaches 3 
-		while(N-- >2){
-			factorialN*=N;
+		for(var i=1; i<=N;i++){
+			var square = i*i;
+			array.push(square);
 		}
-		return factorialN;
+		console.log(array);
+//http://stackoverflow.com/questions/1230233/how-to-go-through-an-array-and-add-their-values
+		var total=0;
+		for(i in array){ 
+			total += array[i]; 
 		}
-};
+		return total;
+//...and here is another way to do it, same source
+		// var sum = array.reduce(add, 0);
+		// function add(a, b) {
+  //   		return a + b;
+		// }
+		// return sum;
+//..this time in jQuery, same source
+		// var total = 0;
+		// $.each(array,function() {
+		//     total += this;
+		// });
+		// return total;
+	}
+}
  $(".btn-eight").click(function(){
 	var N = $(".input8").val();
 	$('.answer8').html(sumSquares(N));
@@ -285,7 +287,7 @@ function findMaxDiff(array) {
 		}
 		else {
 			$('.error9').html("");				
-			for(var i=1; i<array.length;i++){
+			for(i=1; i<array.length;i++){
 				//Jimmy and Ymmij are arrays of the differences
 				//between adjacent elements, one subtracts 
 				//left to right and one subtracts right to left
@@ -311,13 +313,13 @@ function findMaxDiff(array) {
 			}
 		}
 	}
-};
+}
 $(".ninth-btn").click(function(){
 	var a = $(".input9").val();
 	//the .split() takes out the written commas and
 	// turns the input string into an array and
 	//puts honest to goodness array commas in between items
-	array = a.split(",");
+	var array = a.split(",");
 	$('.answer9').html(findMaxDiff(array));
 });
 /*
@@ -344,7 +346,7 @@ function insertDashes(string){
 		console.log(string);
 		return string;
 	}
-};
+}
 
  $(".tenth-btn").click(function(){
 	var string = $(".input10").val();
@@ -377,7 +379,7 @@ function mySubstring(string, a, b){
 			string=string.slice(a, b);
 			return string;
 		}
-};
+}
 $(".btn-eleven").click(function(){
 	var string = $(".input11").val();
 	var a = $(".input11a").val();
@@ -407,7 +409,7 @@ function splitSwap(array){
 			array = "[" + array.join(",") + "]";
 			return array;
 		}
-};
+}
 $(".btn-twelve").click(function(){
 	var array = $(".input12").val();
 	$('.answer12').html(splitSwap(array));
@@ -424,21 +426,35 @@ $(".btn-twelve").click(function(){
  * If the input is invalid throw an 'Invalid Input' exception.
  */
  function smallMultiples(n, k){
+ 	var array=[];
  	if(n===""||k===""||n>=k||isNaN(n)||isNaN(k)){
  		$(".error13").html("Invalid Input");
 		$('.answer13').html("");
  	}else{
  		$(".error13").html("");
- 		
+ 		//b/c were not counting n*1 as a multiple
+ 		//we start at var i=2 and go up to number k. 
+ 		for (var i=2; i<=k;i++){
+ 			//we start figuring out how many numbers
+ 			//can we multiply n by before we = k.
+			if(i*n<=k){
+				//now we build an array of acceptable
+				//outcomes so we can count them
+				array.push(i);
+			}
+ 		}
+ 		//here we count the number of acceptable answers 
+ 		//we were looking for
+ 		return "smallMultiples === "+array.length;
  	}
-};
-
+}
 $(".btn-13").click(function(){
 	var n = $(".input13a").val();
 	var k = $(".input13b").val();
+	k=parseInt(k);
+	n=parseInt(n);
 	$('.answer13').html(smallMultiples(n,k));
 });
-
 }
 
 
