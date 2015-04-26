@@ -61,7 +61,7 @@ $(".second-btn").click(function(){
 	b = b.split(",");
 	console.log(b);
 	//this displays an html version of the array
-	$('#answer2').html(concatenateArrays(a, b));
+	$('.answer2').html(concatenateArrays(a, b));
 });
 /*
  * PROBLEM 3: (easy)
@@ -280,14 +280,17 @@ $(".btn-svn").click(function(){
 function findMaxDiff(array) {
 	var Jimmy=[];
 	var Ymmij=[];
+
 	for (var i=0;i<array.length; i++){
 		if(array.toString()===""||isNaN(array[i])){
 			$('.error9').html("Invalid Input");
 			$('.answer9').html("");
 		}
 		else {
+			
 			$('.error9').html("");				
 			for(i=1; i<array.length;i++){
+				
 				//Jimmy and Ymmij are arrays of the differences
 				//between adjacent elements, one subtracts 
 				//left to right and one subtracts right to left
@@ -365,17 +368,21 @@ function insertDashes(string){
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function mySubstring(string, a, b){
-	if(string===""||a===""||b===""||isNaN(a)||
-		isNaN(b)||a>b||a<=0||b>string.length){
+	if(string===""||a===""||b===""||isNaN(a)||isNaN(b)||
+	a<0||b>string.length){
+		console.log(string.length);
+		console.log(b);
 		$(".error11").html("Invalid Input");
 		$('.answer11').html("");
 	}
 	else {
 			$(".error11").html("");
+			console.log(b);
 		//while b is a number, its still a string type so
 		//b+1=b1 not b+1, so we have to change b to a number
 		//which changes + to addition rather than concantenation
 			b=parseInt(b)+1;
+			a=parseInt(a);
 			string=string.slice(a, b);
 			return string;
 		}

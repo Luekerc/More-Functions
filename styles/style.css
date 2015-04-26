@@ -1,20 +1,107 @@
 @charset "UTF-8";
 body{
-	margin: 2em 0 0 2em;
+	
+	margin: 0 auto;
 	font-family: sans-serif;
-	letter-spacing: 1px;
+	letter-spacing: 1.75px;
+	background-color: rgb(89,66,127);
+	color: white;
+	border-left: 1em solid rgb(91,192,222);
+	border-right: 2px solid white;
+	width: 80%;
+	padding: 3em 0.1em 2em 0.1em;
 }
-h2{
+h3{
+	margin: 1em 0 1em 0;
+	text-align: center;
+	font-size: 0.75em
+}
+.pic{
+	margin: 2em 0 1em 0;
+	height: 7em;
+	width: 100%;
+	text-align: center;
+}
+img{
+	margin: 0 auto;
+	text-align: center;
+	height: 100%;
+	border-radius: 50%;
+}
+#function13{
+	border: white solid 2px;
+	padding: 1em 0.25em 0.75em 0.25em;
+	margin: 0 auto;
+	width: 95%;
+}
+.left{
+	border: white solid 2px;
+	padding: 1em 0.25em 0.75em 0.25em;
+	margin: 0 auto;
+	margin-top: 5px;
+	width: 95%;
+}
+.right{
+	border: white solid 2px;
+	padding: 1em 0.25em 0.75em 0.25em;
+	margin: 0 auto;
+	margin-top: 5px;
+	width: 95%;
+}
+.banner{
+	font-size: 2em;
+	text-align: center;
 	font-weight: bold;
 }
+#btn{
+	margin: 5px 0 0 0;
+	color: white;
+	background-color: rgb(91,192,222);
+	width: 5em;
+	text-align: center;
+	outline: 0;
+	border-radius: 5px;
+}
+.problem{
+	font-weight: bold;
+	font-size: 1.25em;
+	color: orange;
+}
 input{
-	width: 20em;
+	width: 16em;
+	color: black;
+	margin-bottom: 10px;
+	padding-top: 5px;
+}
+.description{
+	margin: 0.5em 0 1em 0;
+	width: 80%;
+	line-height: 1.25em;
 }
 .error{
-	color: red;
+	color: rgb(252,82,1);
+	width: 80%;
 }
-.answer{
-	color: green;
+#answer{
+	font-size: 1.5em;
+	width: 80%;
+}
+#error{
+	color: rgb(252,82,1);
+	font-weight: bold;
+	width: 80%;
+}
+.input11a{
+	width: 4em;
+}
+.input11b{
+	width: 4em;
+}
+.input13b{
+	width: 4em;
+}
+.input13a{
+	width: 4em;
 }
 .first-btn{
     -webkit-transition: text-shadow 0.2s linear;
@@ -25,5 +112,87 @@ input{
 }
 .first-btn:hover {
     text-shadow: 0 0 10px green; /* replace with whatever color you want */
+}
+@media(min-width: 780px) {
+html{
+	padding: none;
+}
+body{
+	padding: 1em 0.5em 2em 1em;
+	font-family: lato;
+	/*width: 85%;*/
+}
+.banner{
+	font-size: 2.5em;
+	background-color: rgb(252,82,1);
+	height: 1.5em;
+	padding-top: 10px;
+	margin-bottom: 0.5em;
+}
+#name-pic{
+	display: inline-block;
+	overflow: none;
+	width: 100%;
+}
+.h3{
+	float: right;
+	margin: 1em 0 0 0em;
+	vertical-align: middle;
+	width: 50%;
+	
+	text-align: left;
+}
+h3{
+	text-align: left;
+}
+.pic{
+	float: left;
+	margin: 0 0 0 0;
+	height: 7em;
+	width: 50%;
+	text-align: right;
+}
+img{
+	margin-right: 1em;
+}
+#boxes{
+	display: inline-block;
+	overflow: none;
+	height: 32em;
+	margin: 0 0 1em 0;
+}
+
+.left{
+	width: 49.5%;
+	float: left;
+	height: 100%;
+	background-color: rgb(120,82,100);
+	padding: 2em 0 0 1em;
+}
+.right{
+	width: 49.5%;
+	float: right;
+	height: 100%;
+	background-color: rgb(120,82,100);
+	padding: 2em 0 0 1em;
+}
+#function13{
+	border: white solid 2px;
+	padding: 2em 0.25em 1em 1em;
+	background-color: rgb(120,82,100);
+	width: 60%;
+	margin: 0 auto;
+}
+.br{
+	display:none;
+	}
+}
+
+
+@media(min-width: 1020px) {
+#boxes{
+	height: 28em;
+	}
+}
 }
 
