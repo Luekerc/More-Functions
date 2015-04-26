@@ -162,14 +162,14 @@ $(".fifth-btn").click(function(){
 	if( a===""||b===""||isNaN(a)||isNaN(b)){
 		$('.error6').html("Invalid Input");
 		$('.answer6').html("");
-	}else if(a>b){
+	}else if(parseInt(a)>parseInt(b)){
 		$('.error6').html("");
 		return b;
 	}else{
 		$('.error6').html("");
 		return a;
 	}
-}
+};
 $(".sixth-btn").click(function(){
 	var a = $(".input6a").val();
 	var b = $(".input6b").val();
